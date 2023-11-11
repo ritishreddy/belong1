@@ -11,7 +11,10 @@ resource "aws_vpc" "vpc" {
     Name = "demo_vpc"
   }
 }
-
+resource "aws_key_pair" "ssh" {
+  key_name   = "DemoMachine"
+  public_key = tls_private_key.ssh.public_key_openssh
+}
 # IGW for demo_vpc
 resource "aws_internet_gateway" "vpc_igw" {
   vpc_id = aws_vpc.vpc.id
