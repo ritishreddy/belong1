@@ -9,7 +9,8 @@ resource "aws_instance" "demo_server" {
 
   tags = {
     Name = "Belong_Servers"
-  }
+    sensitive = true
+ }
 }
 
 # 2 Instances Of Redhat Servers(t2.micro) in Private Subnet
