@@ -9,7 +9,6 @@ resource "aws_instance" "demo_server" {
 
   tags = {
     Name = "Belong_Servers"
-    sensitive = true
  }
 }
 
