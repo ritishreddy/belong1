@@ -26,6 +26,3 @@ variable "linuxamiami" {
 variable "linuxami" {
   default = "ami-07b5c2e394fccab6e"
 }
-variable "key_name" {
-  default = "ansible"
-}
