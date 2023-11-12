@@ -67,8 +67,8 @@ resource "aws_route_table" "private_rt" {
 # Route table and subnets association for public subnet
 resource "aws_route_table_association" "nat_gateway" {
   count          = length(var.subnets_cidr)
-  subnet_id      = element(aws_subnet.public_subnets.*.id, count.index)
-  route_table_id = aws_route_table.public_rt.id
+  subnet_id      = element(aws_subnet.nat_gateway.*.id, count.index)
+  route_table_id = aws_route_table.nat_gateway.id
 }
 
 # Route table and subnets association for private subnet
