@@ -4,7 +4,7 @@ resource "aws_instance" "demo_server" {
   ami                    = var.linuxami
   instance_type          = "t2.medium"
   vpc_security_group_ids = [aws_security_group.demo_sg.id]
-  subnet_id              = element(aws_subnet.public_subnets.*.id, count.index)
+  subnet_id              = element(aws_subnet.nat_gateway.*.id, count.index)
   key_name               = aws_key_pair.ssh.key_name
 
   tags = {
